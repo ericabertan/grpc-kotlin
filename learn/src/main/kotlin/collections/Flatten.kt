@@ -4,8 +4,9 @@ fun main() {
     val listOfAListAuthors: List<List<Author>> = Library.books.map { it.authors }
         .also{ it.forEach{ println(it) } }
 
+    // FLATTEN - RECOVER ELEMENTS INSIDE LIST OF LISTS
     val authors: List<Author> = listOfAListAuthors.flatten()
-        .also{ it.forEach{ println(it)} }
+        .also{ it.forEach{ println(it) } }
 
     val flapMappedAuthors: List<String> = listOfAListAuthors
         .flatMap { authorList ->
@@ -15,5 +16,5 @@ fun main() {
 //            }
 //            flattenedAuthorNames
             authorList.map{ it.name }
-        }.also{ it.forEach{ println(it) }}
+        }.also{ it.forEach{ println(it) } }
 }
